@@ -6,4 +6,6 @@ echo 'setopt share_history' >> .zshrc
 echo 'setopt inc_append_history' >> .zshrc
 
 echo 'ZSH_THEME="refined"' >> .zshrc
-echo 'plugins=(git z web-search)' >> .zshrc
+echo 'plugins=(git z sudo)' >> .zshrc
+
+alias rie='explorer.exe'
