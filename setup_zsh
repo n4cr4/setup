@@ -1,3 +1,4 @@
+cd ~/
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo 'setopt auto_pushd' >> .zshrc
 echo 'setopt pushd_ignore_dups' >> .zshrc
@@ -8,4 +9,4 @@ echo 'setopt inc_append_history' >> .zshrc
 echo 'ZSH_THEME="refined"' >> .zshrc
 echo 'plugins=(git z sudo)' >> .zshrc
 
-alias rie='explorer.exe'
+echo "alias rie='explorer.exe'" >> .zshrc
