@@ -21,6 +21,7 @@ echo $PASS | sudo -S apt install --fix-missing -y \
     python3-pip \
     default-jdk \
     texlive-full \
+    gnuplot \
     evince
 
 auto_sudo apt-get install gnuplot
