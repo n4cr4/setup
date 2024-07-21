@@ -3,12 +3,10 @@
 set -eu
 
 cd ~/
-read -sp "Input your password: " PASS
-echo ""
 echo "Setup starts soon..."
 sudo apt update
 sudo apt upgrade -y
-echo $PASS | sudo -S apt install --fix-missing -y \
+sudo apt install --fix-missing -y \
     build-essential \
     python3-dev \
     vim \

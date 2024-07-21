@@ -30,3 +30,8 @@ Make sure u use **Debian**. I don't care about other distro.
 ### step 3
 
 Import conf file from `resources/keymap.txt`
+
+## Todo
+
+- rewrite script with `mise` which is useful to install cui tools.
+- update log format.
