@@ -1,14 +1,13 @@
 #! /bin/bash
-auto_sudo () {
-    echo $PASS | sudo -S $1 $2 $3 $4 $5 $6
-}
+
+set -eu
 
 cd ~/
 read -sp "Input your password: " PASS
 echo ""
 echo "Setup starts soon..."
-auto_sudo apt update
-auto_sudo apt upgrade -y
+sudo apt update
+sudo apt upgrade -y
 echo $PASS | sudo -S apt install --fix-missing -y \
     build-essential \
     python3-dev \
@@ -23,17 +22,17 @@ echo $PASS | sudo -S apt install --fix-missing -y \
     texlive-full \
     evince
 
-auto_sudo apt-get install gnuplot
+sudo apt-get install gnuplot
 
 curl https://osdn.net/projects/mytexpert/downloads/26068/jlisting.sty.bz2/ -o jlisting.sty.bz2 -L
 bzip2 -d jlisting.sty.bz2
 cd /usr/share/texlive/texmf-dist/tex/latex/listings/
-auto_sudo mv ~/jlisting.sty ./
-auto_sudo chmod 644 jlisting.sty
-auto_sudo mktexlsr
+sudo mv ~/jlisting.sty ./
+sudo chmod 644 jlisting.sty
+sudo mktexlsr
 echo "[+] install jlisting done"
 
-auto_sudo python3 -m pip install ipython
+sudo python3 -m pip install ipython
 echo "[+] pip install ipython done"
 
 echo "[+] apt install done"

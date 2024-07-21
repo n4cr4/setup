@@ -1,0 +1,45 @@
+shell = "[command to start up shell]"
+
+[window]
+padding = { x = 10, y = 10 }
+opacity = 0.9
+
+
+[scrolling]
+history = 100000
+
+[font]
+size = 12
+normal = { family = "HackGen35 Console NF", style = "Regular"}
+
+# Colors (One Dark)
+# Default colors
+[colors.primary]
+background = '#1e2127'
+foreground = '#abb2bf'
+# Normal colors
+[colors.normal]
+black   = '#1e2127'
+red     = '#e06c75'
+green   = '#98c379'
+yellow  = '#d19a66'
+blue    = '#61afef'
+magenta = '#c678dd'
+cyan    = '#56b6c2'
+white   = '#abb2bf'
+# Bright colors
+[colors.bright]
+black   = '#5c6370'
+red     = '#e06c75'
+green   = '#98c379'
+yellow  = '#d19a66'
+blue    = '#61afef'
+magenta = '#c678dd'
+cyan    = '#56b6c2'
+white   = '#ffffff'
+
+[keyboard]
+bindings = [
+	{ action = "CreateNewWindow", key = "N", mods = "Control|Shift" },
+	{ action = "ToggleMaximized", key = "M", mods = "Control|Shift" }
+]

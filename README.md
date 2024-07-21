@@ -1,26 +1,32 @@
-# setup
-## step1
-just apdate
-```
-sudo apt update && sudo apt upgrade -y
-sudo apt-get update && sudo apt-get upgrade -y
-```
-## step2
-run the scripts
+# Setup
 
-## step3
-add code in the setting.json of vscode.
-also make sure to change the shortcuts 
-```
-{
-  "key": "shift+space",
-  "command": "editor.action.triggerSuggest",
-  "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
-}
-```
-## step4
-change property of google IME.
-* 句読点→、．
-* スペース入力→半角
-* IMEを無効化→Ctrl Space
-* 入力補助→アルファベット、数字、カッコはすべて半角
+## tools
+
+- terminal
+  - alacritty
+- shell
+  - zsh
+- dev-env
+  - nvim + tmux
+- IME
+  - google
+
+## run procedure
+
+### step 1
+
+Install terminal.
+See document first, then install appropriate to the OS.
+
+- [repo doc](https://github.com/alacritty/alacritty/blob/master/INSTALL.md)
+- [winget](https://winget.run/pkg/Alacritty/Alacritty)
+
+### step 2
+
+Run script.
+
+Make sure u use **Debian**. I don't care about other distro.
+
+### step 3
+
+Import conf file from `resources/keymap.txt`

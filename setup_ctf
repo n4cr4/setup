@@ -1,19 +1,14 @@
 #! /bin/bash
-# before you run it, you must run
-# "sudo passwd root" manually.
-auto_sudo () {
-    echo $PASS | sudo -S $1 $2 $3 $4 $5 $6
-}
+
+set -eu
 
 cd ~/
-read -sp "Input your password: " PASS
-echo ""
 echo "Setup starts soon..."
-auto_sudo dpkg --add-architecture i386
+sudo dpkg --add-architecture i386
 echo "[+] add arch done"
-auto_sudo apt update
-auto_sudo apt upgrade -y
-echo $PASS | sudo -S apt install --fix-missing -y \
+sudo apt update
+sudo apt upgrade -y
+sudo apt install --fix-missing -y \
     build-essential \
     python3-dev \
     libc6:i386 \
@@ -31,10 +26,10 @@ echo $PASS | sudo -S apt install --fix-missing -y \
     nasm
 echo "[+] apt install done"
 
-auto_sudo python3 -m pip install ipython
+sudo python3 -m pip install ipython
 echo "[+] pip install ipython done"
 
-auto_sudo python3 -m pip install pwntools
+sudo python3 -m pip install pwntools
 echo "[+] pip install pwntools done"
 
 git clone https://github.com/pwndbg/pwndbg && \
@@ -42,36 +37,32 @@ git clone https://github.com/pwndbg/pwndbg && \
 echo "[+] setup pwndbg done"
 
 cd ~/
-auto_sudo -H python3 -m pip install ROPgadget
+sudo -H python3 -m pip install ROPgadget
 echo "[+] pip install ROPgadget done"
 
 wget https://github.com/0vercl0k/rp/releases/download/v1/rp-lin-x64
 chmod +x rp-lin-x64
-auto_sudo mv rp-lin-x64 /usr/local/bin/rp++
+sudo mv rp-lin-x64 /usr/local/bin/rp++
 echo "[+] setup rp++ done"
 
-auto_sudo gem install seccomp-tools
+sudo gem install seccomp-tools
 echo "[+] gem install seccomp-tools done"
 
-auto_sudo gem install one_gadget
+sudo gem install one_gadget
 echo "[+] gem install one_gadget done"
 
 wget https://github.com/io12/pwninit/releases/download/3.2.0/pwninit
 chmod +x pwninit
-auto_sudo mv pwninit /usr/local/bin/
+sudo mv pwninit /usr/local/bin/
 echo "[+] setup pwninit done"
 
-auto_sudo apt install zsh -y
+sudo apt install zsh -y
 echo "[+] apt install zsh done"
 
-auto_sudo apt upgrade -y
+sudo apt upgrade -y
 echo "[+] apt upgrade done"
 
 ZSH_PASS=$(which zsh)
 echo $PASS | chsh -s $ZSH_PASS
-auto_sudo apt-get install -y fzf
 
 echo "finish!!"
-# finally, you need to run
-# echo 'export PATH=$PATH:~/.local/bin' >> .zshrc
-# in order to run commnad-line-pwntools.
